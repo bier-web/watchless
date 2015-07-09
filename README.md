@@ -24,8 +24,6 @@ Usage: watchless [options] <source> <destination>
 
 In a typical watcher solution for package.json:
 
-*NOTE: run watchless last because it doesn't resume stdin on console, you have to press Ctrl+C to exit watching*
-
 ```JSON
 ...
 
