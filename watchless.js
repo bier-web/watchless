@@ -82,6 +82,8 @@ function Watchless(opts) {
                     throw new Error("File not found.");
                 }
             });
+
+            console.log("Watchless is started. Press Ctrl+C to stop watching.");
         };
 
         this.stop = function() {
