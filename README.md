@@ -1,7 +1,7 @@
 #Watcherless#
 
 Unsatisfied with the less file watchers on NPM, I've created *watcherless* to be a more reliable solution. 
-*Watcherless* uses [https://www.npmjs.com/package/chokidar](**chokidar**) as the library for file watching which has better
+*Watcherless* uses [**chokidar**](https://www.npmjs.com/package/chokidar) as the library for file watching which has better
 reliability than fs.watch or stalker.
 
 *When I started this project, there wasn't already one on NPM with the name "watchless", so I had to alter - hence the different name repo*
