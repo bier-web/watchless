@@ -2,6 +2,12 @@
   "name": "watchless",
   "version": "1.0.0",
   "description": "Dynamically compile less files when changed",
+  "homepage": "https://github.com/curiosity26/watchless",
+  "author": {
+    "name": "Alex Boyce",
+    "email": "curiosity26@gmail.com",
+    "url": "http://www.alex-boyce.me/"
+  },
   "main": "watchless.js",
   "bin": {
     "watchless": "./bin/watchless"
@@ -14,7 +20,6 @@
     "watch",
     "filesystem"
   ],
-  "author": "Alex Boyce",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -25,5 +30,9 @@
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/curiosity26/watchless.git"
   }
 }
