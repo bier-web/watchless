@@ -1,0 +1,25 @@
+@charset "utf-8";
+@import "variables.less";
+
+
+body {
+  background-color: @body-bg;
+  color: @color;
+}
+
+a {
+  color: @link-color;
+}
+
+a:hover {
+  color: pink;
+}
+
+span {
+  .class1(1px solid black);
+}
+
+.class1(@border) {
+  border: @border;
+  color: grey;
+}

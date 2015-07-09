@@ -1,0 +1,29 @@
+{
+  "name": "watchless",
+  "version": "1.0.0",
+  "description": "Dynamically compile less files when changed",
+  "main": "watchless.js",
+  "bin": {
+    "watchless": "./bin/watchless"
+  },
+  "scripts": {
+    "test": "echo 'No test are configured'; exit 0;"
+  },
+  "keywords": [
+    "less",
+    "watch",
+    "filesystem"
+  ],
+  "author": "Alex Boyce",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "minimist": "*",
+    "less": ">=2.0",
+    "chokidar": "~1.0",
+    "extend" : "*"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
