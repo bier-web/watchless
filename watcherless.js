@@ -17,7 +17,7 @@ var fs = require("fs"),
         extension: '.css',
     };
 
-function Watchless(opts) {
+function Watcherless(opts) {
 
     var obj = function(opts) {
         var _this = this;
@@ -117,4 +117,4 @@ function Watchless(opts) {
     return new obj(opts);
 }
 
-module.exports = Watchless;
+module.exports = Watcherless;

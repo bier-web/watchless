@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var minimist = require('minimist'),
-    watchless = require('../watchless.js');
+    watcherless = require('../watcherless.js');
 
 var argv = minimist(process.argv.slice(2), {
  'boolean' : ['c', 'h'],
@@ -10,7 +10,7 @@ var argv = minimist(process.argv.slice(2), {
 
 if (argv.h) {
     console.log(" ");
-    console.log("Usage: watchless [options] <source> <destination>");
+    console.log("Usage: watcherless [options] <source> <destination>");
     console.log(" ");
     console.log("  <source>             =   The source directory or less file to compile");
     console.log("  <destination>        =   The destination directory for the compiled CSS");
@@ -31,4 +31,4 @@ var settings = {
 settings.destination = argv._.pop();
 settings.source = argv._.pop();
 
-watchless(settings);
+watcherless(settings);

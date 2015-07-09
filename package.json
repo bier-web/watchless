@@ -1,5 +1,5 @@
 {
-  "name": "watchless",
+  "name": "watcherless",
   "version": "1.0.0",
   "description": "Dynamically compile less files when changed",
   "homepage": "https://github.com/curiosity26/watchless",
@@ -8,7 +8,7 @@
     "email": "curiosity26@gmail.com",
     "url": "http://www.alex-boyce.me/"
   },
-  "main": "watchless.js",
+  "main": "watcherless.js",
   "bin": {
     "watchless": "./bin/watchless"
   },
@@ -18,10 +18,10 @@
   "keywords": [
     "less",
     "watch",
-    "filesystem"
+    "filesystem",
+    "css"
   ],
   "license": "MIT",
-  "private": true,
   "dependencies": {
     "minimist": "*",
     "less": ">=2.0",

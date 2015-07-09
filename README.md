@@ -1,8 +1,16 @@
-#Watchless#
+#Watcherless#
 
-Unsatisfied with the less file watchers on NPM, I've created *watchless* to be a more reliable solution. 
-*Watchless* uses [https://www.npmjs.com/package/chokidar](**chokidar**) as the library for file watching which has better
+Unsatisfied with the less file watchers on NPM, I've created *watcherless* to be a more reliable solution. 
+*Watcherless* uses [https://www.npmjs.com/package/chokidar](**chokidar**) as the library for file watching which has better
 reliability than fs.watch or stalker.
+
+*When I started this project, there wasn't already one on NPM with the name "watchless", so I had to alter - hence the different name repo*
+
+##Install##
+
+```BASH
+    npm install -g watcherless # to install global, include -g
+```
 
 ##Usage##
 
@@ -10,7 +18,7 @@ reliability than fs.watch or stalker.
 
 ```BASH
 
-Usage: watchless [options] <source> <destination>
+Usage: watcherless [options] <source> <destination>
  
   <source>             =   The source directory or less file to compile
   <destination>        =   The destination directory for the compiled CSS
@@ -30,7 +38,7 @@ In a typical watcher solution for package.json:
     {
         "scripts": {
             "watch-js": "watchify app/js/script.js -o app/static/bundle.min.js",
-            "watch-less": "watchless -c app/less app/css",
+            "watch-less": "watcherless -c app/less app/css",
             "watch": "npm run watch-js & npm run watch-less"
         }
     }
@@ -45,7 +53,7 @@ npm run watch
 ###Node.js###
 
 ```JS
-    var watchless = require("watchless");
+    var watcherless = require("watcherless");
     
     var options = {
         source: "app/less/test.less",
@@ -53,18 +61,18 @@ npm run watch
         compress: true
         };
     
-    var watcher = watchless(options); // When source and destination are supplied in the options, watch starts automatically
+    var watcher = watcherless(options); // When source and destination are supplied in the options, watch starts automatically
     
 ```
 
 ```JS
-    var watchless = require("watchless");
+    var watcherless = require("watcherless");
     
     var options = {
         compress: true
         };
         
-    var watcher = watchless(options);
+    var watcher = watcherless(options);
     
     watcher.watch("app/less", "app/css"); // The watcher can be started by calling watch. If the source or destination aren't supplied, they are pulled from the options
     
