@@ -33,7 +33,7 @@ function Watcherless(opts) {
             }
 
             var on_change = function(file) {
-                console.log("Change File: ", file);
+                console.log("Change File: %s", file);
 
                 if (!_this.options.destination) {
                     throw new Error("Destination not defined.");
@@ -58,7 +58,7 @@ function Watcherless(opts) {
                                 fs.writeFileSync(options.outputDir + options.outputfile, result.css, 'utf8' );
                             }
                             else {
-                                console.log("Less Compilation Error: " + err);
+                                console.error("### Less Compilation %s ###", err);
                             }
                         });
                     });
