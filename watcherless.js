@@ -57,6 +57,9 @@ function Watcherless(opts) {
                             if (!err) {
                                 fs.writeFileSync(options.outputDir + options.outputfile, result.css, 'utf8' );
                             }
+                            else {
+                                console.log("Less Compilation Error: " + err);
+                            }
                         });
                     });
                 }
