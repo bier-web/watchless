@@ -1,6 +1,6 @@
 {
   "name": "watcherless",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dynamically compile less files when changed",
   "homepage": "https://github.com/curiosity26/watchless",
   "author": {
@@ -10,7 +10,7 @@
   },
   "main": "watcherless.js",
   "bin": {
-    "watchless": "./bin/watchless"
+    "watcherless": "./bin/watcherless"
   },
   "scripts": {
     "test": "echo 'No test are configured'; exit 0;"
