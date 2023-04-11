@@ -4,13 +4,12 @@
   "description": "Dynamically compile less files when changed",
   "homepage": "https://github.com/curiosity26/watchless",
   "author": {
-    "name": "Alex Boyce",
-    "email": "curiosity26@gmail.com",
-    "url": "http://www.alex-boyce.me/"
+    "name": "Carlos Eduardo Bier",
+    "email": "bier.web@icloud.com",
   },
-  "main": "watcherless.js",
+  "main": "bos-watcherless.js",
   "bin": {
-    "watcherless": "./bin/watcherless"
+    "boswatcherless": "./bin/boswatcherless"
   },
   "scripts": {
     "test": "echo 'No test are configured'; exit 0;"
