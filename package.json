@@ -1,6 +1,6 @@
 {
-  "name": "watcherless",
-  "version": "1.0.4",
+  "name": "bos-watcherless",
+  "version": "1.0.0",
   "description": "Dynamically compile less files when changed",
   "homepage": "https://github.com/curiosity26/watchless",
   "author": {
@@ -33,6 +33,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/curiosity26/watchless.git"
+    "url": "https://github.com/bier-web/watchless"
   }
 }
