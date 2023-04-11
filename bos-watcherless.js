@@ -80,10 +80,11 @@ function BosWatcherless(opts) {
                         watcher = chokidar.watch(sp, { ignored: /[\/\\]\./, persistent: true });
                         watcher.on('change', on_change);
                         watcher.on('add', on_change);
+                        console.log(_this.options);
                         if (_this.options.justcompile) {
                             watcher.on('ready', () => {
-                                console.log('Dir scan ready');
-                                watcher.close();
+                                // console.log('Dir scan ready');
+                                // watcher.close();
                             });
                         } else {
                             console.log('Watchless is started. Press Ctrl+C to stop watching.');
