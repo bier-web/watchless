@@ -126,4 +126,4 @@ function BosWatcherless(opts) {
     return new obj(opts);
 }
 
-module.exports = Watcherless;
+module.exports = BosWatcherless;
