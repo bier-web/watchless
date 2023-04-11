@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var minimist = require('minimist'),
-    watcherless = require('../watcherless.js');
+    watcherless = require('../bos-watcherless.js');
 
 var argv = minimist(process.argv.slice(2), {
     boolean: ['c', 'h'],
