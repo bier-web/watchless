@@ -83,8 +83,8 @@ function BosWatcherless(opts) {
                         console.log(_this.options);
                         if (_this.options.justcompile) {
                             watcher.on('ready', () => {
-                                // console.log('Dir scan ready');
-                                // watcher.close();
+                                console.log('Dir scan ready');
+                                watcher.close();
                             });
                         } else {
                             console.log('Watchless is started. Press Ctrl+C to stop watching.');
