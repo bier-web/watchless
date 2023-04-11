@@ -1,6 +1,6 @@
 {
   "name": "watcherless",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Dynamically compile less files when changed",
   "homepage": "https://github.com/curiosity26/watchless",
   "author": {

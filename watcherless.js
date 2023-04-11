@@ -2,24 +2,23 @@
  * Created by alexboyce on 7/7/15.
  */
 
-"use strict";
+'use strict';
 
-var fs = require("fs"),
-    exec = require("child_process").exec,
-    chokidar = require("chokidar"),
-    extend = require("extend"),
-    path = require("path"),
-    less = require("less"),
+var fs = require('fs'),
+    exec = require('child_process').exec,
+    chokidar = require('chokidar'),
+    extend = require('extend'),
+    path = require('path'),
+    less = require('less'),
     watcher = null,
     DEFAULT = {
         source: null,
         destination: null,
-        extension: '.css',
+        extension: '.css'
     };
 
 function Watcherless(opts) {
-
-    var obj = function(opts) {
+    var obj = function (opts) {
         var _this = this;
 
         this.options = {};
@@ -32,64 +31,70 @@ function Watcherless(opts) {
                 watcher.stop();
             }
 
-            var on_change = function(file) {
-                console.log("Change File: %s", file);
+            var on_change = function (file) {
+                console.log('Change File: %s', file);
 
                 if (!_this.options.destination) {
-                    throw new Error("Destination not defined.");
+                    throw new Error('Destination not defined.');
                 }
                 if (/\.less$/.test(file)) {
-                    fs.readFile(file, function(err, data) {
-                        if (err) {throw new Error(err);}
+                    fs.readFile(file, function (err, data) {
+                        if (err) {
+                            throw new Error(err);
+                        }
 
                         var options = {
-                            paths         : [path.dirname(file)],
-                            outputDir     : _this.options.destination + "/",
-                            optimization  : 1,
-                            filename      : path.basename(file, '.less'),
-                            compress      : _this.options.compress,
-                            yuicompress   : _this.options.compress
+                            paths: [path.dirname(file)],
+                            outputDir: _this.options.destination + '/',
+                            optimization: 1,
+                            filename: path.basename(file, '.less'),
+                            compress: _this.options.compress,
+                            yuicompress: _this.options.compress,
+                            justCompile: _this.options.justcompile
                         };
 
-                        options.outputfile = options.filename.split(".less")[0] + (options.compress ? ".min" : "") + _this.options.extension;
+                        options.outputfile = options.filename.split('.less')[0] + (options.compress ? '.min' : '') + _this.options.extension;
 
-                        less.render(data.toString(), options, function(err, result) {
+                        less.render(data.toString(), options, function (err, result) {
                             if (!err) {
-                                fs.writeFileSync(options.outputDir + options.outputfile, result.css, 'utf8' );
-                            }
-                            else {
-                                console.error("### Less Compilation %s ###", err);
+                                fs.writeFileSync(options.outputDir + options.outputfile, result.css, 'utf8');
+                            } else {
+                                console.error('### Less Compilation %s ###', err);
                             }
                         });
                     });
                 }
             };
 
-            fs.exists(sp, function(exists) {
+            fs.exists(sp, function (exists) {
                 if (exists) {
                     _this.options.source = sp;
 
-                    fs.exists(dp, function(exists) {
+                    fs.exists(dp, function (exists) {
                         if (!exists) {
                             fs.mkdirSync(dp);
                         }
 
                         _this.options.destination = fs.realpathSync(dp);
 
-                        watcher = chokidar.watch(sp, {ignored: /[\/\\]\./, persistent: true});
+                        watcher = chokidar.watch(sp, { ignored: /[\/\\]\./, persistent: true });
                         watcher.on('change', on_change);
                         watcher.on('add', on_change);
+                        if (_this.options.justcompile) {
+                            watcher.on('ready', () => {
+                                watcher.stop();
+                            });
+                        }
                     });
-                }
-                else {
-                    throw new Error("File not found.");
+                } else {
+                    throw new Error('File not found.');
                 }
             });
 
-            console.log("Watchless is started. Press Ctrl+C to stop watching.");
+            console.log('Watchless is started. Press Ctrl+C to stop watching.');
         };
 
-        this.stop = function() {
+        this.stop = function () {
             if (!!watcher) {
                 watcher.stop();
             }
@@ -107,7 +112,7 @@ function Watcherless(opts) {
             }
         };
 
-        process.on('exit', function() {
+        process.on('exit', function () {
             if (!!watcher) {
                 watcher.close();
             }
