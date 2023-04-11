@@ -17,7 +17,7 @@ var fs = require('fs'),
         extension: '.css'
     };
 
-function Watcherless(opts) {
+function BosWatcherless(opts) {
     var obj = function (opts) {
         var _this = this;
 

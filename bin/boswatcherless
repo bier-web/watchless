@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var minimist = require('minimist'),
-    watcherless = require('../bos-watcherless.js');
+    boswatcherless = require('../bos-watcherless.js');
 
 var argv = minimist(process.argv.slice(2), {
     boolean: ['c', 'h'],
@@ -10,7 +10,7 @@ var argv = minimist(process.argv.slice(2), {
 
 if (argv.h) {
     console.log(' ');
-    console.log('Usage: watcherless [options] <source> <destination>');
+    console.log('Usage: boswatcherless [options] <source> <destination>');
     console.log(' ');
     console.log('  <source>             =   The source directory or less file to compile');
     console.log('  <destination>        =   The destination directory for the compiled CSS');
@@ -25,6 +25,7 @@ if (argv.h) {
 }
 
 var settings = {
+    justcompile: argv.j || argv.justcompile,
     compress: argv.c || argv.compress,
     extension: argv.e || argv.extension || '.css'
 };
@@ -32,4 +33,4 @@ var settings = {
 settings.destination = argv._.pop();
 settings.source = argv._.pop();
 
-watcherless(settings);
+boswatcherless(settings);
