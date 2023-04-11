@@ -82,16 +82,17 @@ function Watcherless(opts) {
                         watcher.on('add', on_change);
                         if (_this.options.justcompile) {
                             watcher.on('ready', () => {
-                                watcher.stop();
+                                console.log('Dir scan ready');
+                                watcher.close();
                             });
+                        } else {
+                            console.log('Watchless is started. Press Ctrl+C to stop watching.');
                         }
                     });
                 } else {
                     throw new Error('File not found.');
                 }
             });
-
-            console.log('Watchless is started. Press Ctrl+C to stop watching.');
         };
 
         this.stop = function () {
