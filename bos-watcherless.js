@@ -1,5 +1,5 @@
 /**
- * Created by alexboyce on 7/7/15.
+ * Created by BIER on 11/4/23.
  */
 
 'use strict';
@@ -108,6 +108,7 @@ function BosWatcherless(opts) {
             }
 
             extend(_this.options, opts);
+            console.log(_this.options);
 
             if (!!_this.options.source && !!_this.options.destination) {
                 _this.watch();
