@@ -1,6 +1,6 @@
 {
   "name": "bos-watcherless",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Dynamically compile less files when changed",
   "homepage": "https://github.com/curiosity26/watchless",
   "author": {
@@ -22,10 +22,10 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "minimist": "*",
+    "chokidar": "^3.5.3",
+    "extend": "*",
     "less": ">=2.0",
-    "chokidar": "~1.0",
-    "extend" : "*"
+    "minimist": "*"
   },
   "engines": {
     "node": ">=0.10.0"
