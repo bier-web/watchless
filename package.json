@@ -5,7 +5,7 @@
   "homepage": "https://github.com/curiosity26/watchless",
   "author": {
     "name": "Carlos Eduardo Bier",
-    "email": "bier.web@icloud.com",
+    "email": "bier.web@icloud.com"
   },
   "main": "bos-watcherless.js",
   "bin": {
